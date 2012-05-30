@@ -1,36 +1,307 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[12pt,a4paper]{article}
 
 \usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage[all]{hypcap}
+\usepackage{makeidx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{}
+\chead{}
+\rhead{Auteur: Omar Hajjaj}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+
+\renewcommand{\figurename}{Figuur}
+\renewcommand{\tablename}{Tabel}
+\renewcommand{\contentsname}{Inhoudstabel}
+\renewcommand{\listfigurename}{Lijst figuren}
+\renewcommand{\listtablename}{Lijst tabellen}
+
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
+\makeindex
 
 \begin{document}\begin{titlepage}
 
 \begin{center}
 
 
-% Upper part of the page
+
 \includegraphics[width=0.25\textwidth]{./handbrake.png}\\[1cm]    
 
-\textsc{\LARGE Handbrake}\\[1.5cm]
+\textsc{\LARGE HandBrake}\\[1.5cm]
 
 \textsc{\Large Linux practicum}\\[0.5cm]
 
 
-% Title
+
 \HRule \\[0.4cm]
-{ \huge \bfseries Hajjaj Omar}\\[0.3cm]
+{ \huge \bfseries Hajjaj Omar 2 Tin C}\\[0.3cm]
 
 \HRule \\[1.5cm]
 \includegraphics[width=0.5\textwidth]{./movie.png}\\[1cm]
 
 \vfill
 
-% Bottom of the page
+
 {\large \today}
 
-\end{center}
+\pagebreak
+\tableofcontents
+\listoffigures
+\listoftables
 
+\section{Voorwoord}
+Ik ben Omar Hajjaj en studeer Toegepaste Informatica aan de PHL\index{PHL}.
+In dit document zal ik het over HandBrake\index{HandBrake} hebben. Ik maak gebruik van  Ubuntu 11.10 als besturingssysteem.
+
+\pagebreak
+
+\section{HandBrake}
+\subsection{Wat is HandBrake}
+HandBrake is een programma die eerst ontwikkeld werd om om het rippen van een film van een DVD naar een data-opslagapparaat vergemakkelijken. Maar tegenwoordig zijn er heel wat extra's bijgekomen waardoor het een populair programma is geworden voor filmliefhebbers. Het programma kan videobestanden met een h264- of mpeg4-beeldindeling en een aac-, ac-3-, mp3- of Ogg Vorbis-geluidsindeling omzetten.
+
+HandBrake is een open-source programma die  ontwikkeld werd door titer in 2003 en maakt gebruik van de vele LGPL bibliotheken van het Linux-platform.
+\subsection{Geschiedenis}
+\begin{table}[h!b!p!]
+\caption{Overzicht versies HandBrake \label{HandBrakeversies}}
+\begin{center}
+\begin{tabular}{|l|r|}
+\hline
+Versie & Datum\\\hline
+HandBrake & 2003 \\
+Banana & Aug 2006 \\
+MediaFork & Sep 2006 \\
+0.9.1 & 2007 \\
+0.9.2 & Feb 2008 \\
+0.9.3 & Nov 2008 \\
+0.9.4 & Nov 2009 \\
+0.9.5 & Jan 2011 \\
+0.9.6 & Feb 2012\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Tabel \ref{HandBrakeversies} toont een overzicht van de ontwikkeling van HandBrake. 
+
+\paragraph{Eerste versies}
+
+HandBrake werd door titer in 2003 ontwikkeld. Hij bleef de originele ontwikkelaar tot April 2006,  toen werd de eerste subversie van HandBrake ontwikkeld.
+
+\paragraph{HandBrake tot September 2006} 
+HandBrake was onstabiel tot September 2006. Sindsdien kende het programma een vooruitgang op de stabiliteit, functionaliteit en ook de layout. ( dit heeft waarschijnlijk te maken met het succes van HandBrake bij Apple). 
+
+\paragraph{MediaFork}
+In September 2006, Rodney Hester en Chris Long waren op zelfstandige basis aan het werken om de H.264 video compressie formaat van de iPod(Apple) firmware (1.2) te ontwikkelen. Hester en Long noemden hun project MediaFork.
+\begin{figure}[h]
+\begin{center}
+
+\includegraphics[scale=0.5]{./MediaFork.jpg}
+\caption{\label{fig1}MediaFork}
+\end{center}
+\end{figure}
+
+\paragraph{2007- Nu}
+Hester en Long werden door Titer gecontacteerd die hen aanbod om samen te werken. Vervolgens werkten MediaFork en HandBrake officiëel samen.
+
+
+\paragraph{HandBrake 0.9.1}
+HandBrake 0.9.1 werd uitgebracht omdat de ontwikkelaars vonden dat versie 0.9.0 niet stabiel genoeg was zoals het hoorde te zijn.
+
+\subparagraph{verbeteringen:}
+\begin{enumerate}
+\item Indrukwekkende performance verbeteringen
+\item Significante-interface 
+\item Kleur ondertitels 
+\item Veranderen van de afmetingen in Picture Settings zorgt niet meer voor een crash (Mac)
+\item Gedwongen ondersteuning voor ondertitels
+\item MPEG streamen ondersteuning is nu niet meer hoofdlettergevoelig (. VOB als. Vob, enz.) en meer compatiebel
+\item Een goede weergave van fading ondertitels
+\item On-voltooiing opties ( Pc uitschakelen na voltooiing opdracht bv.)
+\item Add-to-wachtrij toegevoegd
+\item ...
+\end{enumerate}
+\pagebreak
+\section{Input}
+\begin{table}[h!b!p!]
+\caption{De Input bestanden van HandBrake \label{Input}}
+\begin{center}
+\begin{tabular}{|l|r|}
+\hline
+VIDEO-TS & Video Object (VOB)\\\hline
+Matroska (MKV) & Audio Video Interleave (AVI)\\\hline
+ISO image (ISO) & MPEG-4 Part 14 (MP4)\\\hline
+
+
+\end{tabular}
+\end{center}
+\end{table}
+Tabel \ref{Input} toont de mogelijke input bestanden voor HandBrake.
+
+\section{Output}
+\begin{table}[h!b!p!]
+\caption{De Output bestanden van HandBrake \label{Output}}
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+MPEG4 Part 14 (MP4) & H264 (x264) & MPEG Audio Layer3 (MP3)\\\hline
+iTunes Video (M4V) & MPEG-4 ASP (FFmpeg) & Dolby Digital (AC-3)\\\hline
+Matroska (MKV) & Advanced Audio Coding(AAC) & Vorbis\\\hline
+
+\end{tabular}
+\end{center}
+\end{table}
+Tabel \ref{Output} toont de mogelijke output bestanden voor HandBrake.
+
+\pagebreak
+\section{Voor- en nadelen van HandBrake}
+\subsection{Voordelen}
+\begin{enumerate}
+\item HandBrake is een krachtig programma
+\item Gratis 
+\item Veel Output bestanden mogelijk
+\end{enumerate}
+
+\subsection{Nadelen van HandBrake}
+\begin{enumerate}
+\item Ondersteunt geen Blu-ray 
+\item Beperkte support
+\item Grote bestandsgrootte na het converteren 
+
+\end{enumerate}
+\pagebreak
+\section{Gebruik}
+\subsection{CLI}
+HandBrakeCLI -i source -o destination
+Dit is een simpele input en output.
+\subsection{Scripting}
+Dit is een voorbeeld van een perl script om HandBrake door een heel map te runnen.
+Het script moet een .sh extensie zijn.
+\begin{verbatim}
+#!/bin/bash
+if [ -z "$1" ] ; then
+	TRANSCODEDIR="."
+else
+TRANSCODEDIR="$1"
+fi
+for file in "$TRANSCODEDIR"/*
+do
+	HandBrakeCLI -i "${file}" -o "${file}.mp4" --preset="iPhone & iPod Touch"""
+done
+
+Bron:http://www.surlyjake.com/2010/06/script-to-run-handbrake-on-an-entire-folder/
+\end{verbatim}
+\pagebreak
+\subsection{GUI}
+\subsubsection{Beginscherm}
+Op figuur 2
+ ziet u hoe het beginscherm van HandBrake eruit ziet.
+\begin{figure}[h]
+\begin{center}
+
+\includegraphics[scale=0.5]{./handbrake1.png}
+\caption{\label{fig2}Beginscherm}
+\end{center}
+\end{figure}
+
+\subsubsection{Ondertitel}
+Op figuur 3 ziet u hoe u ondertitels kunt toevoegen aan een film.
+
+\begin{figure}[h]
+\begin{center}
+
+\includegraphics[scale=0.5]{./ondertitel.png}
+\caption{\label{fig3}Ondertittel}
+\end{center}
+\end{figure}
+\pagebreak
+\section{Configuratie mail-server}
+Om mijn Gmail-account te configureren heb ik gebruik gemaakt van mutt.
+sudo apt-get install openssl mutt om mail te installeren is de commando die ik in de terminal heb ingegeven, vervolgens 
+sudo gedit en zoeken in etc map naar Muttrc daar heb ik de volgende gegevens toegevoegd in dat bestand: 
+\begin{itemize}
+
+\item set imap\_user = "hajjajomar@gmail.com"
+\item set imap\_pass = "0000000"
+\item set smtp-url = "smtp://hajjajomar@smtp.gmail.com:587/"
+\item set smtp-pass = "00000000"
+\item set from = "hajjajomar@gmail.com 
+\item set realname = "Hajjaj Omar"
+
+
+\item set folder = "imaps://imap.gmail.com:993" 
+\item set spoolfile = "+INBOX"
+\item set postponed="+[Gmail]/Drafts" 
+\item header-cache=~/.mutt/cache/headers
+\item set t move=no
+
+\end{itemize}
+\pagebreak
+\section{Bash-script}
+In het Bash-script wordt er een aanspreking, voornaam en achternaam en email gevraagd.Om een email te sturen naar het ingegeven email adres met als onderwerp : aanspreking.
+
+\begin{verbatim}
+#!/bin/bash
+
+echo -e "aanspreking"
+read aanspreking
+echo -e "voornaam"
+read voornaam
+echo -e "achternaam"
+read achternaam
+echo -m "mailadres"
+read mailadres
+
+echo | mutt -s "$aanspreking $achternaam $voornaam" $mailadres -a ~/practicum.pdf
+
+\end{verbatim}
+
+\section{Versiebeheersysteem}
+Ik heb voor Git als versiebeheersysteem gekozen.
+Eerst heb ik een account gemaakt bij Git. Vervolgens heb ik Git via de terminal geinstalleerd en geconfigureerd.
+
+Hiervoor heb ik de stappen gevolgd die op :http://help.github.com/win-set-up-git/ staan gevolgd.
+
+Vervolgens heb ik mijn bestanden eraan gekoppeld.
+
+\begin{figure}[h]
+\begin{center}
+
+\includegraphics[scale=0.5]{./git5.JPG}
+\caption{\label{fig4}Git}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+
+\includegraphics[scale=0.5]{./git6_3.JPG}
+\caption{\label{fig5}GitK}
+\end{center}
+\end{figure}
+
+\section{Bronnen}
+\begin{itemize}
+\item \href{http://nl.wikibooks.org/wiki/LaTeX}{\LaTeX{} Wikibooks} 
+\item \href{http://www.go2linux.org/linux/2010/10/how-send-email-command-line-gmail-mutt-789}{go2linux} 
+\item \href{http://www.surlyjake.com/2010/06/script-to-run-handbrake-on-an-entire-folder/}{Scripting HandBrake} 
+\item \href{https://trac.handbrake.fr/wiki/CLIGuide/}{CLI HandBrake} 
+\item \href{http://help.github.com/win-set-up-git/}{Git}
+\item \href{https://trac.handbrake.fr/wiki/CLIGuide/}{CLI HandBrake} 
+\item \href{http://pastebin.com/HGTXa9S3/}{Mutt}
+\item \href{http://handbrake.fr/}{HandBrake}
+
+\end{itemize}
+\end{center}
 \end{titlepage}
 \end{document}
